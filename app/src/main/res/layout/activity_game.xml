@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GameActivity">
+
+    <ImageView
+        android:id="@+id/background_game"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/background"
+        android:scaleType="centerCrop" />
+
+    <TableLayout
+        android:layout_width="500dp"
+        android:layout_height="500dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+        <TableRow >
+            <ImageView
+                android:id="@+id/image_puzzle_1"
+                android:layout_weight="50"
+                android:layout_marginRight="3dp"
+                android:layout_marginLeft="10dp"
+                android:scaleType="fitCenter"
+
+                app:srcCompat="@drawable/_puzzly_1_1"/>
+
+            <ImageView
+                android:id="@+id/image_puzzle_2"
+                android:layout_weight="50"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="3dp"
+                android:scaleType="fitCenter"
+
+                app:srcCompat="@drawable/white_box"/>
+        </TableRow>
+
+        <TableRow>
+
+            <ImageView
+                android:id="@+id/image_puzzle_3"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="3dp"
+                android:layout_weight="50"
+                android:scaleType="fitCenter"
+
+                app:srcCompat="@drawable/white_box" />
+
+            <ImageView
+                android:id="@+id/image_puzzle_4"
+                android:layout_weight="50"
+                android:scaleType="fitCenter"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="3dp"
+
+                app:srcCompat="@drawable/white_box"/>
+        </TableRow>
+
+
+    </TableLayout>
+</RelativeLayout>
