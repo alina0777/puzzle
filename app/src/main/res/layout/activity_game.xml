@@ -4,64 +4,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".GameActivity">
 
-    <ImageView
-        android:id="@+id/background_game"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:srcCompat="@drawable/background"
-        android:scaleType="centerCrop" />
-
-    <TableLayout
+    <RelativeLayout
         android:layout_width="500dp"
         android:layout_height="500dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:orientation="vertical"
-        android:weightSum="100">
 
-        <TableRow >
-            <ImageView
-                android:id="@+id/image_puzzle_1"
-                android:layout_weight="50"
-                android:layout_marginRight="3dp"
-                android:layout_marginLeft="10dp"
-                android:scaleType="fitCenter"
+        android:layout_marginLeft="10dp"
+        android:background="@color/black50">
 
-                app:srcCompat="@drawable/_puzzly_1_1"/>
+        <ImageView
+            android:id="@+id/centerObject"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/white_box"/>
 
-            <ImageView
-                android:id="@+id/image_puzzle_2"
-                android:layout_weight="50"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="3dp"
-                android:scaleType="fitCenter"
+        <ImageView
 
-                app:srcCompat="@drawable/white_box"/>
-        </TableRow>
+            android:id="@+id/image_puzzle_1"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@color/white10"
 
-        <TableRow>
+            android:layout_marginLeft="10dp"
+            android:layout_toLeftOf="@+id/centerObject"
+            android:layout_above="@+id/centerObject"/>
 
-            <ImageView
-                android:id="@+id/image_puzzle_3"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="3dp"
-                android:layout_weight="50"
-                android:scaleType="fitCenter"
+        <ImageView
+            android:id="@+id/image_puzzle_3"
 
-                app:srcCompat="@drawable/white_box" />
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@color/white10"
 
-            <ImageView
-                android:id="@+id/image_puzzle_4"
-                android:layout_weight="50"
-                android:scaleType="fitCenter"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="3dp"
+            android:layout_marginLeft="10dp"
+            android:layout_toLeftOf="@+id/centerObject"
+            android:layout_below="@+id/centerObject"/>
 
-                app:srcCompat="@drawable/white_box"/>
-        </TableRow>
+        <ImageView
+            android:id="@+id/image_puzzle_2"
+
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@color/white10"
+
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/centerObject"
+            android:layout_above="@+id/centerObject"/>
+
+        <ImageView
+            android:id="@+id/image_puzzle_4"
+
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@color/white10"
+
+            android:layout_marginRight="10dp"
+            android:layout_toRightOf="@+id/centerObject"
+            android:layout_below="@+id/centerObject"/>
 
 
-    </TableLayout>
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </RelativeLayout>
