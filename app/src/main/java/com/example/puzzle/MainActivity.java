@@ -19,11 +19,14 @@ public class MainActivity extends AppCompatActivity {
         button_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Intent intent = new Intent(MainActivity.this, GameActivity.class);
                 intent.putExtra("targetSound", "targetSound");
+                intent.putExtra("level", "1");
                 setResult(Activity.RESULT_OK, intent);
                 startActivityForResult(intent,101);
                 onNewIntent (intent);
+
             }
         });
     }
