@@ -26,8 +26,10 @@ public class MainActivity extends AppCompatActivity {
                 setResult(Activity.RESULT_OK, intent);
                 startActivityForResult(intent,101);
                 onNewIntent (intent);
-
             }
         });
     }
+
+
+
 }
