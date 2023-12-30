@@ -19,6 +19,7 @@ public class ButtonImageController {
                             ImageView imageView,
                             int idButton,
                             int corner,
+                            int idCorner,
                             String fileName) {
 
         localImageView = imageView;
@@ -32,6 +33,7 @@ public class ButtonImageController {
     public void initButtonImage() {
 
         setImage();
+        localImageView.setRotation(localCorner);
 
         localImageView.setOnLongClickListener(new View.OnLongClickListener() {
             public boolean onLongClick(View view) {
@@ -57,24 +59,30 @@ public class ButtonImageController {
                 if (GameActivity.currentThreadChangeImage!=null) {
                     if (GameActivity.currentThreadChangeImage.getActive()==false) {
 
-                        localImageView.animate().rotation(localCorner);
-                        localCorner=localCorner+90;
+                        localCorner = localCorner + 90;
 
+                        if (localCorner > 360) {
+                            localCorner = 0;
+                            localImageView.setRotation(localCorner);
+                            localCorner=localCorner+90;
+
+                        }
+
+                        localImageView.animate().rotation(localCorner);
+                        GameActivity.checkWinner();
                     } else {
 
                         if (GameActivity.setChangeImage==1){
 
                             GameActivity.currentThreadChangeImage.disable();
 
-
-                            System.out.println("thread_id: " + String.valueOf(GameActivity.currentThreadChangeImage.localIdButton));
-                            System.out.println("localIdButton: " + String.valueOf(localIdButton));
-
                             changeImagesInPuzzle(GameActivity.currentThreadChangeImage.localIdButton,
                                     localIdButton);
 
 
                             GameActivity.setChangeImage = 0;
+
+                            GameActivity.checkWinner();
                         } else {
                             GameActivity.setChangeImage++;
                         }
@@ -97,12 +105,9 @@ public class ButtonImageController {
         ButtonImageController objTo = GameActivity.listPuzzles.get(toPuzzle-1);
 
         String bFileName = objFrom.localFileName;
-        ImageView bImageView = objFrom.localImageView;
 
         objFrom.setLocalFileName(objTo.localFileName);
-        //objFrom.setLocalImageView(objTo.localImageView);
 
-        //objTo.setLocalImageView(bImageView);
         objTo.setLocalFileName(bFileName);
 
         GameActivity.setImageAllItemsPuzzle();
