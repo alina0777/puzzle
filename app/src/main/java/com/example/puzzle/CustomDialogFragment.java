@@ -27,28 +27,19 @@ public class CustomDialogFragment extends DialogFragment {
                 .setTitle(winner)
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .setMessage("Игра окончена")
-                .setPositiveButton("Начать сначала", new DialogInterface.OnClickListener() {
+                .setPositiveButton("Выбрать следующий", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // Переход
-
                         dismiss();
-                    }
-                })
-                .setNegativeButton("Главное меню", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-                        // Переход
                         getActivity().finish();
+                        getActivity().recreate();
+                        LevelsActivity.activity.recreate();
                     }
                 })
                 .create();
     }
 
 
-    public void Restart(){
-
-    }
 
 }

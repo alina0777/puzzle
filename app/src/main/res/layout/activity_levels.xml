@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LevelsActivity"
+    android:background="@drawable/background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Выберите уровень:"
+        android:textSize="40dp"
+
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"/>
+
+
+    <TableLayout
+        android:id="@+id/tableLevels"
+        android:layout_marginTop="150dp"
+        android:layout_marginBottom="150dp"
+        android:background="@color/white10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:weightSum="100">
+
+        <TableRow>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/black50"
+                android:layout_marginLeft="10dp"
+
+                android:layout_marginTop="5dp"
+                android:layout_weight="25"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="2"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/black50"
+                android:layout_marginLeft="10dp"
+
+                android:layout_marginTop="5dp"
+                android:layout_weight="25"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="3"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/black50"
+                android:layout_marginLeft="10dp"
+
+                android:layout_marginTop="5dp"
+                android:layout_weight="25"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="4"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/black50"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+
+                android:layout_marginTop="5dp"
+                android:layout_weight="25"/>
+        </TableRow>
+
+        <TableRow>
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/black50"
+                android:layout_marginLeft="10dp"
+
+                android:layout_marginTop="5dp"
+                android:layout_weight="25"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="2"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/black50"
+                android:layout_marginLeft="10dp"
+
+                android:layout_marginTop="5dp"
+                android:layout_weight="25"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="3"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/black50"
+                android:layout_marginLeft="10dp"
+
+                android:layout_marginTop="5dp"
+                android:layout_weight="25"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="4"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/black50"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+
+                android:layout_marginTop="5dp"
+                android:layout_weight="25"/>
+        </TableRow>
+
+        <TableRow>
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="1"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/black50"
+                android:layout_marginLeft="10dp"
+
+                android:layout_marginTop="5dp"
+                android:layout_weight="25"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="2"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/black50"
+                android:layout_marginLeft="10dp"
+
+                android:layout_marginTop="5dp"
+                android:layout_weight="25"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="3"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/black50"
+                android:layout_marginLeft="10dp"
+
+                android:layout_marginTop="5dp"
+                android:layout_weight="25"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:text="4"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@color/black50"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+
+                android:layout_marginTop="5dp"
+                android:layout_weight="25"/>
+        </TableRow>
+
+
+    </TableLayout>
+
+<androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/backfromlevels"
+    android:layout_width="80dp"
+    android:layout_height="80dp"
+    android:background="@drawable/back"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentLeft="true"
+    android:layout_marginLeft="10dp"
+    android:layout_marginTop="5dp"
+    />
+</RelativeLayout>

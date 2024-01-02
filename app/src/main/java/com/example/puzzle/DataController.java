@@ -11,27 +11,33 @@ public class DataController {
     private static Context context = null;
 
     public static void init( Context cntxt ){
-        context = cntxt;
-    }
 
-    private static void init() {
+        context = cntxt;
         settings = context.getSharedPreferences(STORAGE_NAME, Context.MODE_PRIVATE);
         editor = settings.edit();
     }
 
-    public static void addProperty(String name, String value ) {
+
+
+    public static void addProperty(String name, int value ) {
         if( settings == null ){
-            init();
+            init(context);
         }
-        editor.putString( name, value );
+        editor.putInt( name, value );
         editor.commit();
     }
 
-    public static String getProperty( String name ) {
+    public static Integer getProperty( String name ) {
+
         if( settings == null ) {
-            init();
+            init(context);
         }
 
-        return settings.getString( name, null );
+        return settings.getInt( name, 0);
+    }
+
+    public static void clearAll() {
+        editor.remove("levels");
+        addProperty("levels",1);
     }
 }

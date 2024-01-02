@@ -15,14 +15,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+//        DataController.init(getApplicationContext());
+//        DataController.clearAll();
+
         Button button_start = findViewById(R.id.button_start);
         button_start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(MainActivity.this, GameActivity.class);
+                Intent intent = new Intent(MainActivity.this, LevelsActivity.class);
                 intent.putExtra("targetSound", "targetSound");
-                intent.putExtra("level", "1");
                 setResult(Activity.RESULT_OK, intent);
                 startActivityForResult(intent,101);
                 onNewIntent (intent);

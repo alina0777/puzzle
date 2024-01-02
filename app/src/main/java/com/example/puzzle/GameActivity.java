@@ -3,19 +3,10 @@ package com.example.puzzle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
-import android.graphics.Color;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
+import android.content.Context;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TableLayout;
-import android.widget.TableRow;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 
 import java.util.Random;
@@ -24,10 +15,10 @@ public class GameActivity extends AppCompatActivity {
 
     public static ThreadLongClickImage currentThreadChangeImage = null;
     public static  ArrayList<ButtonImageController> listPuzzles = new ArrayList<>();
-
     public static int setChangeImage = 0;
-    public static String currentLevel = "1";
+    public static Integer currentLevel = 0;
     public static FragmentManager fragmentManager;
+    public static Context context;
     String targetSound = "0";
 
     ArrayList<Integer> listDefaultCorners = new ArrayList<>();
@@ -37,13 +28,12 @@ public class GameActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
 
+        context = getApplicationContext();
         Bundle extras = getIntent().getExtras();
 
         if (extras != null) {
-
             targetSound = extras.getString("targetSound");
-            currentLevel = extras.getString("level");
-
+            currentLevel = extras.getInt("level");
         }
 
         listPuzzles = new ArrayList<>();
@@ -71,10 +61,12 @@ public class GameActivity extends AppCompatActivity {
         listImagePuzzles.add(partPuzzle_3);
         listImagePuzzles.add(partPuzzle_4);
 
+        int[] intArray = getArrayRandomNumbersForFiles();
+
 
         for (int i = 1; i <= 4; i++) {
 
-            String filename = "puzzle_"+currentLevel+"/puzzle_"+ String.valueOf(i)+".png";
+            String filename = "puzzle_"+currentLevel+"/puzzle_"+ String.valueOf(intArray[i-1])+".png";
 
             int randomItem = getRandomInt(1, 3);
 
@@ -86,16 +78,30 @@ public class GameActivity extends AppCompatActivity {
                     randomItem+1,
                     filename);
 
-            System.out.println(" [" + String.valueOf(i) + "] ");
-            System.out.println("randomItem: " + String.valueOf(randomItem));
-            System.out.println("listDefaultCorners.get(randomItem)" + String.valueOf(listDefaultCorners.get(randomItem)));
-
             listPuzzles.add(objPuzzle);
         }
 
         setImageAllItemsPuzzle();
     }
 
+
+    public int[] getArrayRandomNumbersForFiles() {
+        final int N = 4;
+        ArrayList<Integer> arrayList = new ArrayList<>(N);
+        Random random = new Random();
+
+        while (arrayList.size() < N) {
+            int i = random.nextInt(N) + 1;
+            if (!arrayList.contains(i)) {
+                arrayList.add(i);
+
+            }
+        }
+
+        int[] randomArray = arrayList.stream().mapToInt(i -> i).toArray();
+        return randomArray;
+
+    }
     public static void setImageAllItemsPuzzle() {
 
         for (int i = 0; i < listPuzzles.size(); i++) {
@@ -126,24 +132,24 @@ public class GameActivity extends AppCompatActivity {
             }
         }
 
-        System.out.println("sumValidate: " + String.valueOf(sumValidate));
         if (sumValidate == 4) {
+
+            DataController.init(context);
+            Integer levels_in_memory = DataController.getProperty("levels");
+            if (levels_in_memory <= currentLevel) {
+                DataController.addProperty("levels", currentLevel+1);
+            }
+
 
             CustomDialogFragment dialog = new CustomDialogFragment();
 
             Bundle bundle = new Bundle();
             bundle.putString("winner", "");
             dialog.setArguments(bundle);
-
             dialog.show(fragmentManager, "custom");
         }
 
 
-    }
-
-    public void winPlayer() {
-        DataController.init (getApplicationContext());
-        DataController.addProperty("level","2");
     }
 
     public static String getShortFileName(String filename, int start, int end) {
@@ -162,4 +168,5 @@ public class GameActivity extends AppCompatActivity {
         return  i;
 
     }
+
 }
