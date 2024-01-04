@@ -1,4 +1,4 @@
-package com.example.puzzle;
+package com.game.puzzle;
 
 import android.content.Context;
 

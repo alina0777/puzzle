@@ -1,12 +1,9 @@
-package com.example.puzzle;
+package com.game.puzzle;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import androidx.fragment.app.DialogFragment;
 import androidx.annotation.NonNull;

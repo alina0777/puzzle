@@ -1,4 +1,4 @@
-package com.example.puzzle;
+package com.game.puzzle;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;

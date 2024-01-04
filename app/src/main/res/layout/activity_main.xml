@@ -15,6 +15,17 @@
         android:scaleType="centerCrop"
         app:srcCompat="@drawable/background"/>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button_restart"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/circular_arrow"
+        />
+
+
     <ImageView
         android:id="@+id/logo_main"
         android:layout_width="wrap_content"
@@ -22,6 +33,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp"
+
         app:srcCompat="@drawable/main_menu_pic" />
 
     <androidx.appcompat.widget.AppCompatButton
