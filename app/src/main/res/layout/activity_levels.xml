@@ -131,58 +131,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_weight="25"/>
         </TableRow>
-
-        <TableRow>
-            <androidx.appcompat.widget.AppCompatButton
-                android:text="1"
-                android:textColor="@color/white"
-                android:textSize="30dp"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:background="@color/black50"
-                android:layout_marginLeft="10dp"
-
-                android:layout_marginTop="5dp"
-                android:layout_weight="25"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:text="2"
-                android:textColor="@color/white"
-                android:textSize="30dp"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:background="@color/black50"
-                android:layout_marginLeft="10dp"
-
-                android:layout_marginTop="5dp"
-                android:layout_weight="25"
-                />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:text="3"
-                android:textColor="@color/white"
-                android:textSize="30dp"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:background="@color/black50"
-                android:layout_marginLeft="10dp"
-
-                android:layout_marginTop="5dp"
-                android:layout_weight="25"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:text="4"
-                android:textColor="@color/white"
-                android:textSize="30dp"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:background="@color/black50"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-
-                android:layout_marginTop="5dp"
-                android:layout_weight="25"/>
-        </TableRow>
+        <TableRow/>
 
 
     </TableLayout>
