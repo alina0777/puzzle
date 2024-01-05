@@ -26,12 +26,11 @@
 Когда все части картинки собраны, игрок победил и перешел на новый уровень, в память игры запоминается прогресс игрока, и на панели выбора уровня, открывается новая ячейка с новым уровнем:
 
 
-![Image alt](https://github.com/alina0777/puzzle/blob/main/screen_2.JPG)
-
+![Image alt](https://github.com/alina0777/puzzle/blob/main/screen_7.JPG)
 
 
 ![Image alt](https://github.com/alina0777/puzzle/blob/main/screen_6.JPG)
 
 
-![Image alt](https://github.com/alina0777/puzzle/blob/main/screen_7.JPG)
+
 
