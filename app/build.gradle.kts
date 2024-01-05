@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.game.puzzle"
+    namespace = "com.puzzlygame.puzzle"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.game.puzzle"
+        applicationId = "com.puzzlygame.puzzle"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
